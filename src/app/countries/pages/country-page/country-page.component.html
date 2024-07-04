@@ -1,0 +1,36 @@
+<ng-template #loading>
+  <div class="alert alert-info">Espere por favor...</div>
+</ng-template>
+
+<div *ngIf="country; else loading">
+  <div class="row">
+    <div class="col-12">
+      <h1>{{ country.name.common }}</h1>
+    </div>
+    <hr />
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <img [src]="country.flags.png" alt="Flag" class="img-fluid" />
+    </div>
+    <div class="col-6">
+      <h3>Información general</h3>
+      <ul class="list-group">
+        <li class="list-group-item"><b>Capital:</b> {{ country.capital }}</li>
+        <li class="list-group-item">
+          <b>Area:</b> {{ country.area | number }} km²
+        </li>
+        <li class="list-group-item">
+          <b>Population:</b> {{ country.population | number }}
+        </li>
+        <li class="list-group-item"><b>Region:</b> {{ country.region }}</li>
+        <li class="list-group-item">
+          <b>Subregion:</b> {{ country.subregion }}
+        </li>
+        <li class="list-group-item">
+          <b>Timezones:</b> {{ country.timezones }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
