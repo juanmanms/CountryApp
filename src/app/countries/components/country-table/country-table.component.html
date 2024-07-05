@@ -5,35 +5,37 @@
 <ng-template #table>
   <div class="row">
     <div class="col">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Capital</th>
-            <th>País</th>
-            <th>Bandera</th>
-            <th>Poblacion</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- hacer una linea por cada country -->
-          <tr *ngFor="let country of countries">
-            <td>{{ country.capital }}</td>
-            <td>{{ country.name.common }}</td>
-            <td>
-              <img
-                [src]="country.flags.svg"
-                alt="{{ country.name.nativeName.spa }}"
-                style="height: 50px"
-              />
-            </td>
-            <td>{{ country.population | number }}</td>
-            <td>
-              <a [routerLink]="['/countries/by', country.cca3]">Ver más</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Capital</th>
+              <th>País</th>
+              <th>Bandera</th>
+              <th>Poblacion</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- hacer una linea por cada country -->
+            <tr *ngFor="let country of countries">
+              <td>{{ country.capital }}</td>
+              <td>{{ country.name.common }}</td>
+              <td>
+                <img
+                  [src]="country.flags.svg"
+                  alt="{{ country.name.nativeName.spa }}"
+                  style="height: 50px"
+                />
+              </td>
+              <td>{{ country.population | number }}</td>
+              <td>
+                <a [routerLink]="['/countries/by', country.cca3]">Ver más</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </ng-template>

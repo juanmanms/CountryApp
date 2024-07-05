@@ -17,9 +17,8 @@
     <!-- Hacer una botonera en la misma linea con recorriendo con ngfor todas las regiones -->
     <button
       type="button"
-      style="width: 15%"
       *ngFor="let region of regiones"
-      class="btn btn-primary"
+      class="btn btn-primary btn-sm"
       [class.active]="region === regionSelected"
       (click)="setActiveRegion(region)"
     >
