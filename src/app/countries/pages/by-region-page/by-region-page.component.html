@@ -1,12 +1,31 @@
 <h2>Por región</h2>
 <hr />
 <div class="row">
-  <div class="col">
+  <!-- <div class="col">
     <shared-search-box
       placeholder="Buscar por capital"
-      (onValue)="searchByCapital($event)"
+      (onValue)="searchByRegion($event)"
+      (onDebounce)="searchByRegion($event)"
     />
+  </div> -->
+
+  <!-- Hacer un select con las regiones -->
+  <div
+    class="col"
+    style="flex: 1 0 0%; display: flex; justify-content: space-between"
+  >
+    <!-- Hacer una botonera en la misma linea con recorriendo con ngfor todas las regiones -->
+    <button
+      type="button"
+      style="width: 15%"
+      *ngFor="let region of regiones"
+      class="btn btn-primary"
+      [class.active]="region === regionSelected"
+      (click)="setActiveRegion(region)"
+    >
+      {{ region | titlecase }}
+    </button>
   </div>
+  <hr />
+  <countries-table [countries]="countries"></countries-table>
 </div>
-<hr />
-<countries-table [countries]="countries"></countries-table>
