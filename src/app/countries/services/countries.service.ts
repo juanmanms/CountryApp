@@ -17,8 +17,7 @@ export class CountryService {
         //mostrar un alert con el error
         alert(err.message || 'Error en la busqueda');
         return of([]);
-      }),
-      delay(200)
+      })
     );
   }
 

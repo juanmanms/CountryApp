@@ -26,10 +26,7 @@ export class CountryPageComponent implements OnInit {
           this.router.navigateByUrl('/countries');
           return;
         }
-        //this.country = country;
-        setTimeout(() => {
-          this.country = country;
-        }, 500);
+        this.country = country;
       });
   }
 }
